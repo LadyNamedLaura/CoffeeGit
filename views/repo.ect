@@ -1,0 +1,9 @@
+<% extend 'layout.ect' %>
+
+repository <%- @repo %>
+
+<table class="table table-striped">
+  <% for child in @list : %>
+    <tr><td><%- child.name %></td></tr>
+  <% end %>
+</table>
