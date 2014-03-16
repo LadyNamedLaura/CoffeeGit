@@ -1,9 +1,21 @@
 <% extend 'layout.ect' %>
 
-repository <%- @repo %>
+<h1><%- @repo %></h1>
 
-<table class="table table-striped">
+<h2><%- @fname %></h2>
+
+<table class="table table-striped rowlink" data-link="row" >
+  <% if @fname?.length : %>
+    <tr><td><a href=".."><span class="glyphicon glyphicon-folder-open"></span></a></td><td>..</td></tr>
+  <% end %>
   <% for child in @list : %>
-    <tr><td><%- child.name %></td></tr>
+    <tr>
+      <% if child.dir :%>
+        <td><a href="<%- child.name %>/"><span class="glyphicon glyphicon-folder-open"></span></a></td>
+      <% else :%>
+        <td><a href="<%- child.name %>"><span class="glyphicon glyphicon-file"></span></a></td>
+      <% end %>
+      <td><%- child.name %></td>
+    </tr>
   <% end %>
 </table>

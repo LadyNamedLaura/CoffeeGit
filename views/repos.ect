@@ -1,0 +1,12 @@
+<% extend 'layout.ect' %>
+
+<h1><%- @user %></h1>
+
+<table class="table table-striped rowlink" data-link="row" >
+  <% for repo in @repos : %>
+    <tr>
+        <td><a href="<%- repo %>/"><span class="glyphicon glyphicon-book"></span></a></td>
+      <td><%- repo %></td>
+    </tr>
+  <% end %>
+</table>

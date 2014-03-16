@@ -1,0 +1,12 @@
+<% extend 'layout.ect' %>
+
+<h1>CoffeeGit</h1>
+
+<table class="table table-striped rowlink" data-link="row" >
+  <% for u in @users : %>
+    <tr>
+        <td><a href="<%- u %>/"><span class="glyphicon glyphicon-user"></span></a></td>
+      <td><%- u %></td>
+    </tr>
+  <% end %>
+</table>
