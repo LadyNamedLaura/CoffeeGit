@@ -19,9 +19,6 @@ app.get '/repos/:repo', (req, res) ->
   console.log req.repo.tree()
   req.repo.tree().contents (err, children) ->
     res.render 'repo.ect', repo: req.params.repo, list: children
-#    for child in children
-#        console.log child.name
-#  res.render 'repo.ect', repo: req.params.repo
 
 app.post '/login', (req, res) ->
   user = req.body.user
